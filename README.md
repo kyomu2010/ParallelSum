@@ -1,4 +1,4 @@
-## A java program comparing sequential and parallel summation of numbers
+## A java program comparing sequential and parallel (multiple threads) summation of numbers
 
 Sample console output:
 
