@@ -13,17 +13,17 @@ public class ParallelSum {
 
 	public int sum(int[] nums) {
 
-		// partition array into subarrays to match number of threads
+		// partition array into subarrays to match number of worker threads
 		int steps = (int) Math.ceil(nums.length * 1.0 / numOfThreads);
 
 		for (int i = 0; i < numOfThreads; i++) {
-			sums[i] = new ParallelWorker(nums, 1 * steps, (i + 1) * steps);
+			sums[i] = new ParallelWorker(nums, i * steps, (i + 1) * steps);
 			sums[i].start();
 		}
 
 		try {
 			for (ParallelWorker worker : sums) {
-				// wait for each worker to finish job
+				// wait for each worker to finish its job
 				worker.join();
 			}
 		} catch (InterruptedException e) {
