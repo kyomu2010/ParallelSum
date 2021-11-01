@@ -1,1 +1,1 @@
-"## A java program demonstrating parallel summation of numbers" 
+## A java program demonstrating parallel summation of numbers
